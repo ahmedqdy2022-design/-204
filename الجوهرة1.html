@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الجوهرة للمجوهرات والذهب | Jawhara Royal Store</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f7e7ce',
+                            DEFAULT: '#d4af37',
+                            dark: '#aa7c11',
+                            dim: 'rgba(212, 175, 55, 0.25)',
+                        },
+                        diamond: {
+                            DEFAULT: '#e0f7fa',
+                            glow: '#b2ebf2',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Luxury CSS -->
+    <style>
+        :root {
+            --color-black: #080808;
+            --color-dark: #121212;
+            --color-card: #161616;
+            --color-gold: #d4af37;
+            --color-gold-light: #f7e7ce;
+            --color-gold-dark: #aa7c11;
+            --color-gold-dim: rgba(212, 175, 55, 0.25);
+            --color-text-main: #f7e7ce;
+            --color-text-sub: #aaaaaa;
+            --font-primary: 'Cairo', sans-serif;
+            --font-heading: 'Amiri', serif;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa7c11 100%);
+            --diamond-glow: drop-shadow(0 0 10px rgba(178, 235, 242, 0.6));
+        }
+
+        body.light-mode {
+            --color-black: #faf8f5;
+            --color-dark: #ffffff;
+            --color-card: #f4efe6;
+            --color-text-main: #1a1a1a;
+            --color-text-sub: #555555;
+            --color-gold-dim: rgba(170, 124, 17, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-black);
+            color: var(--color-text-main);
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .font-amiri { font-family: var(--font-heading); }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .text-gold { color: var(--color-gold); }
+        
+        .text-gold-gradient {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .diamond-sparkle {
+            filter: var(--diamond-glow);
+            animation: diamondFlash 3s infinite alternate;
+        }
+
+        @keyframes diamondFlash {
+            0% { filter: drop-shadow(0 0 2px rgba(224, 247, 250, 0.4)); }
+            100% { filter: drop-shadow(0 0 18px rgba(178, 235, 242, 0.9)); }
+        }
+
+        .fixed-full { position: fixed; inset: 0; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .z-high { z-index: 100; }
+        .z-max { z-index: 999; }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: #000;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-gold);
+            color: #000;
+        }
+
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .bg-dark-trans {
+            background-color: rgba(18, 18, 18, 0.90);
+        }
+
+        body.light-mode .bg-dark-trans {
+            background-color: rgba(255, 255, 255, 0.90);
+        }
+
+        .nav-link {
+            color: var(--color-text-sub);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-gold);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-gold);
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-sub);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .action-btn:hover { color: var(--color-gold); }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--color-gold);
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section {
+            background: radial-gradient(circle at center, rgba(31,31,31,0.8) 0%, var(--color-black) 100%);
+        }
+
+        .golden-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-gold-dim);
+            color: var(--color-text-sub);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-gold);
+            color: #000;
+            border-color: var(--color-gold);
+            font-weight: bold;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        .glow-anim {
+            animation: gemGlow 3s infinite alternate;
+        }
+
+        @keyframes gemGlow {
+            from { filter: drop-shadow(0 0 2px var(--color-gold)); }
+            to { filter: drop-shadow(0 0 15px var(--color-gold)); }
+        }
+
+        .product-card {
+            position: relative;
+            background-color: var(--color-card);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid var(--color-gold-dim);
+            border-radius: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .input-luxury {
+            background-color: var(--color-black);
+            border: 1px solid var(--color-gold-dim);
+            color: var(--color-text-main);
+            padding: 10px 16px;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+            transition: border-color 0.3s;
+        }
+
+        .input-luxury:focus {
+            border-color: var(--color-gold);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-black); }
+        ::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed-full flex-center bg-black z-max">
+        <div class="loader-content text-center">
+            <div class="gem-spinner">
+                <i class="fa-solid fa-gem text-5xl text-gold glow-anim diamond-sparkle"></i>
+            </div>
+            <h2 class="brand-title mt-4 text-2xl text-gold font-amiri tracking-widest" id="loaderTitle">منصة الجوهرة</h2>
+            <p class="text-xs text-gray-400 mt-2" id="loaderText">جاري تحميل المعروضات الذهبية الحقيقية...</p>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar bg-gold-dark text-black text-xs text-center py-2 font-bold tracking-wide">
+        <span data-key="announcement"><i class="fa-solid fa-crown ml-2"></i> تشكيلة الفخامة الملكية 2026 - جميع المعروضات مصنوعة من الذهب والماس الحقيقي ومعتمدة</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="mainHeader" class="header-sticky border-b border-gold-dim bg-dark-trans backdrop-blur">
+        <div class="container mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <button id="mobileMenuBtn" class="lg:hidden text-gold text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo flex items-center gap-3 text-decoration-none">
+                <div class="logo-icon-wrapper">
+                    <i class="fa-solid fa-gem text-3xl text-gold diamond-sparkle"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="block text-2xl font-bold font-amiri text-gold tracking-wider" id="logoText">الـجـوهـرة</span>
+                    <span class="block text-[9px] uppercase tracking-widest text-gold-light opacity-80 font-cinzel">JAWHARA ROYAL</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+                <a href="#hero" class="nav-link active" data-key="nav_home">الرئيسية</a>
+                <a href="#categories" class="nav-link" data-key="nav_categories">المجموعات</a>
+                <a href="#liveGoldPrice" class="nav-link text-gold" data-key="nav_gold"><i class="fa-solid fa-chart-line ml-1"></i> أسعار الذهب اليوم</a>
+                <a href="#products" class="nav-link" data-key="nav_products">المعروضات الفاخرة</a>
+                <a href="#paymentSection" class="nav-link" data-key="nav_payment"><i class="fa-solid fa-credit-card ml-1 text-gold"></i> الدفع والحسابات</a>
+                <a href="#storeLocator" class="nav-link" data-key="nav_branches"><i class="fa-solid fa-location-dot ml-1 text-gold"></i> الفروع والتوصيل</a>
+                <a href="#contactSection" class="nav-link" data-key="nav_contact"><i class="fa-solid fa-headset ml-1 text-gold"></i> التواصل والحجز</a>
+                <a href="#arExperience" class="nav-link" data-key="nav_ar"><i class="fa-solid fa-vr-cardboard ml-1"></i> تجربة AR</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-4 md:gap-6">
+                <!-- Mode Toggle (Dark/Light) -->
+                <button id="themeToggleBtn" class="action-btn text-gold text-lg w-9 h-9 rounded-full border border-gold-dim flex items-center justify-center" title="تبديل الوضع">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+
+                <!-- Language Toggle (AR/EN) -->
+                <button id="langToggleBtn" class="action-btn text-gold text-xs font-bold border border-gold-dim px-3 py-1 rounded-full flex items-center gap-1">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="langLabel">EN</span>
+                </button>
+
+                <!-- Location Button -->
+                <button id="locationBtn" class="action-btn text-gold text-sm hidden sm:flex items-center gap-1 border border-gold-dim px-3.5 py-1.5 rounded-full" title="تحديد الفرع الأقرب">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span id="selectedBranchLabel" class="hidden md:inline">الرياض</span>
+                </button>
+
+                <!-- Cart Button -->
+                <button id="cartOpenBtn" class="action-btn" title="سلة الشراء">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cartCount" class="badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="mobile-menu-overlay fixed-full bg-black z-high hidden flex-col justify-between p-8">
+        <div class="flex justify-between items-center border-b border-gold-dim pb-4">
+            <span class="text-xl font-amiri text-gold" data-key="mobile_menu_title">القائمة الرئيسية</span>
+            <button id="mobileMenuClose" class="text-2xl text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="mobile-nav-list flex flex-col gap-6 text-lg my-auto text-center">
+            <li><a href="#hero" class="mobile-link hover:text-gold" data-key="nav_home">الرئيسية</a></li>
+            <li><a href="#categories" class="mobile-link hover:text-gold" data-key="nav_categories">المجموعات</a></li>
+            <li><a href="#products" class="mobile-link hover:text-gold" data-key="nav_products">القطع المتاحة</a></li>
+            <li><a href="#paymentSection" class="mobile-link hover:text-gold" data-key="nav_payment">طرق الدفع والتحويل</a></li>
+            <li><a href="#storeLocator" class="mobile-link hover:text-gold" data-key="nav_branches">الفروع والموقع</a></li>
+            <li><a href="#contactSection" class="mobile-link hover:text-gold" data-key="nav_contact">التواصل والحجز الملكي</a></li>
+            <li><a href="#arExperience" class="mobile-link hover:text-gold" data-key="nav_ar">التجربة الافتراضية (AR)</a></li>
+        </ul>
+        <div class="mobile-menu-footer border-t border-gold-dim pt-4 text-center text-xs text-gray-500" data-key="footer_rights">
+            منصة الجوهرة © 2026 جميع الحقوق محفوظة
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden border-b border-gold-dim py-20">
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div class="inline-block border border-gold px-4 py-1 rounded-full text-xs text-gold tracking-widest mb-6 uppercase" data-key="hero_badge">
+                    الفخامة المطلقة والضمان الملكي 2026
+                </div>
+                <h1 class="text-4xl md:text-7xl font-amiri leading-tight mb-8">
+                    <span data-key="hero_title_1">صياغة تُخلّد الأوقات</span> <br><span class="text-gold-gradient" data-key="hero_title_2">وبريقٌ يلامس الخيال</span>
+                </h1>
+                <p class="max-w-2xl mx-auto opacity-80 text-base md:text-lg mb-10 leading-relaxed font-light" data-key="hero_desc">
+                    مرحباً بكم في دار الجوهرة. الوجهة الأولى لاقتناء أنقى قطع الألماس الحر وصياغات الذهب النادر مع خدمة التوصيل المصفّح والشراء بالبطاقات البنكية.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#products" class="btn-primary" data-key="hero_btn_shop">تسوق المجموعة الملكية</a>
+                    <a href="#storeLocator" class="btn-secondary" data-key="hero_btn_branches"><i class="fa-solid fa-store ml-2"></i> تحديد الفرع والتوصيل</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Gold Price Ticker -->
+        <section id="liveGoldPrice" class="py-6 border-b border-gold-dim" style="background-color: var(--color-card);">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="pulse-dot"></span>
+                        <h4 class="font-bold text-sm" data-key="gold_live_title">مؤشر أسعار الذهب المباشر:</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-6 text-xs md:text-sm font-mono">
+                        <div><span class="opacity-70" data-key="k24">عيار 24:</span> <span id="gold24" class="text-gold font-bold">285.50 ر.س</span></div>
+                        <div><span class="opacity-70" data-key="k21">عيار 21:</span> <span id="gold21" class="text-gold font-bold">249.80 ر.س</span></div>
+                        <div><span class="opacity-70" data-key="k18">عيار 18:</span> <span id="gold18" class="text-gold font-bold">214.10 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="section-header text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-amiri text-gold mb-4" data-key="categories_title">تشكيلات الجوهرة</h2>
+                    <div class="golden-line mx-auto"></div>
+                    <p class="opacity-70 text-sm mt-4" data-key="categories_subtitle">اختاري التشكيلة التي تناسب مناسباتكِ الفاخرة</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="category-card relative rounded-2xl overflow-hidden border border-gold-dim group cursor-pointer shadow-2xl">
+                        <img src="https://images.pexels.com/photos/1457801/pexels-photo-1457801.jpeg?auto=compress&cs=tinysrgb&w=800" alt="الخواتم الذهبية" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6 text-center">
+                            <h3 class="text-2xl font-amiri text-white mb-1" data-key="cat_rings">الخواتم والسوليتير</h3>
+                            <span class="text-xs text-gold uppercase tracking-widest" data-key="cat_rings_sub">أحجار ألماس ومجوهرات نادرة</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card relative rounded-2xl overflow-hidden border border-gold-dim group cursor-pointer shadow-2xl">
+                        <img src="https://images.pexels.com/photos/2849743/pexels-photo-2849743.jpeg?auto=compress&cs=tinysrgb&w=800" alt="القلائد الذهبية" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6 text-center">
+                            <h3 class="text-2xl font-amiri text-white mb-1" data-key="cat_necklaces">القلائد والسلاسل</h3>
+                            <span class="text-xs text-gold uppercase tracking-widest" data-key="cat_necklaces_sub">تصاميم ذهبية ملكية</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card relative rounded-2xl overflow-hidden border border-gold-dim group cursor-pointer shadow-2xl">
+                        <img src="https://images.pexels.com/photos/2735970/pexels-photo-2735970.jpeg?auto=compress&cs=tinysrgb&w=800" alt="الأساور الذهبية" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6 text-center">
+                            <h3 class="text-2xl font-amiri text-white mb-1" data-key="cat_bracelets">الأساور والمعاصم</h3>
+                            <span class="text-xs text-gold uppercase tracking-widest" data-key="cat_bracelets_sub">أساور مرصعة بالنادر</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card relative rounded-2xl overflow-hidden border border-gold-dim group cursor-pointer shadow-2xl">
+                        <img src="https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=800" alt="الأقراط والذهب" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6 text-center">
+                            <h3 class="text-2xl font-amiri text-white mb-1" data-key="cat_earrings">الأقراط والمجموعات</h3>
+                            <span class="text-xs text-gold uppercase tracking-widest" data-key="cat_earrings_sub">أقراط لؤلؤ وألماس</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase Section -->
+        <section id="products" class="py-20 border-t border-b border-gold-dim" style="background-color: var(--color-card);">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl font-amiri text-gold" data-key="products_title">المعرض الملكي الرئيسي</h2>
+                        <p class="opacity-70 text-xs mt-1" data-key="products_subtitle">تصفحي القطع الفاخرة المتاحة للشراء المباشر بالبطاقات البنكية والتحويل</p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <button class="filter-btn active" data-filter="all" data-key="filter_all">الكل</button>
+                        <button class="filter-btn" data-filter="diamond" data-key="filter_diamond">الألماس الحر</button>
+                        <button class="filter-btn" data-filter="gold21" data-key="filter_gold21">ذهب عيار 21</button>
+                        <button class="filter-btn" data-filter="gold18" data-key="filter_gold18">ذهب عيار 18</button>
+                        <button class="filter-btn" data-filter="sets" data-key="filter_sets">الأطقم الكاملة</button>
+                    </div>
+                </div>
+
+                <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Dynamic Products Grid -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Methods & Bank Info Section -->
+        <section id="paymentSection" class="py-20 border-b border-gold-dim">
+            <div class="container mx-auto px-6">
+                <div class="section-header text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-amiri text-gold mb-4" data-key="payment_title">طرق الدفع والحساب الملكي</h2>
+                    <div class="golden-line mx-auto"></div>
+                    <p class="opacity-70 text-sm mt-4" data-key="payment_subtitle">نوفر أعلى معايير الأمان والتشفير المالي مع إمكانية التحويل المباشر والدفع أونلاين</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="p-8 rounded-2xl border border-gold-dim shadow-xl" style="background-color: var(--color-card);">
+                        <h3 class="text-2xl font-amiri text-gold mb-6" data-key="payment_methods_title">وسائل الدفع الإلكتروني المعتمدة</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-brands fa-cc-visa text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">Visa Card</span>
+                            </div>
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-brands fa-cc-mastercard text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">MasterCard</span>
+                            </div>
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-brands fa-apple-pay text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">Apple Pay</span>
+                            </div>
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-solid fa-credit-card text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">مدى Mada</span>
+                            </div>
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-solid fa-shield-halved text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">تشفير 256-Bit</span>
+                            </div>
+                            <div class="p-4 border border-gold-dim rounded-xl hover:border-gold transition">
+                                <i class="fa-solid fa-truck-fast text-3xl text-gold mb-2 block"></i>
+                                <span class="text-xs font-bold">توصيل مصفح</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 rounded-2xl border-2 border-gold shadow-2xl relative" style="background-color: var(--color-black);">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-amiri text-gold" data-key="bank_transfer_title">التحويل البنكي المباشر</h3>
+                            <i class="fa-solid fa-building-columns text-2xl text-gold"></i>
+                        </div>
+                        <div class="space-y-4 text-xs sm:text-sm font-mono">
+                            <div class="p-3 border border-gold-dim rounded-lg flex justify-between items-center">
+                                <div>
+                                    <span class="block opacity-60 text-[10px]">البنك المعتمد:</span>
+                                    <span class="font-bold text-gold">مصرف الراجحي / Al-Rajhi Bank</span>
+                                </div>
+                                <i class="fa-solid fa-university text-gold"></i>
+                            </div>
+                            <div class="p-3 border border-gold-dim rounded-lg flex justify-between items-center">
+                                <div>
+                                    <span class="block opacity-60 text-[10px]">اسم الحساب:</span>
+                                    <span class="font-bold text-gold">شركة الجوهرة للمجوهرات والذهب</span>
+                                </div>
+                            </div>
+                            <div class="p-3 border border-gold-dim rounded-lg flex justify-between items-center">
+                                <div>
+                                    <span class="block opacity-60 text-[10px]">رقم الحساب Account No:</span>
+                                    <span class="font-bold text-gold">4820 0001 9820 3819</span>
+                                </div>
+                            </div>
+                            <div class="p-3 border border-gold rounded-lg flex justify-between items-center bg-gold/5">
+                                <div>
+                                    <span class="block opacity-60 text-[10px]">رقم الآيبان IBAN Number:</span>
+                                    <span class="font-bold text-gold tracking-widest" id="ibanNum">SA93 8000 0482 0001 9820 3819</span>
+                                </div>
+                                <button onclick="copyIBAN()" class="btn-primary text-[10px] px-3 py-1">نسخ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Store Locator & Branch Section -->
+        <section id="storeLocator" class="py-20 border-b border-gold-dim">
+            <div class="container mx-auto px-6">
+                <div class="section-header text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-amiri text-gold mb-4" data-key="branches_title">فروع دار الجوهرة وتحديد الموقع</h2>
+                    <div class="golden-line mx-auto"></div>
+                    <p class="opacity-70 text-sm mt-4" data-key="branches_subtitle">حدد فرعك المفضّل للاستلام المباشر أو التوصيل بالسيارات المصفحة</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl border border-gold-dim hover:border-gold transition shadow-xl" style="background-color: var(--color-card);">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-amiri text-gold">فرع الرياض الرئيسي</h3>
+                                <p class="text-xs opacity-70">طريق الملك فهد، برج الجوهرة</p>
+                            </div>
+                            <i class="fa-solid fa-building text-gold text-2xl"></i>
+                        </div>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-clock text-gold ml-1"></i> يعمل يومياً من 10:00 صباحاً - 11:00 مساءً</p>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-phone text-gold ml-1"></i> 96611223344+ </p>
+                        <button onclick="selectBranch('فرع الرياض الرئيسي')" class="btn-secondary text-xs w-full py-2.5" data-key="select_branch">
+                            تعيين كفرع الاستلام المفضّل
+                        </button>
+                    </div>
+
+                    <div class="p-6 rounded-2xl border border-gold-dim hover:border-gold transition shadow-xl" style="background-color: var(--color-card);">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-amiri text-gold">فرع جدة كورنيش</h3>
+                                <p class="text-xs opacity-70">طريق الكورنيش، الأندلس مول</p>
+                            </div>
+                            <i class="fa-solid fa-building text-gold text-2xl"></i>
+                        </div>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-clock text-gold ml-1"></i> يعمل يومياً من 10:00 صباحاً - 11:00 مساءً</p>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-phone text-gold ml-1"></i> 96612233445+ </p>
+                        <button onclick="selectBranch('فرع جدة كورنيش')" class="btn-secondary text-xs w-full py-2.5" data-key="select_branch">
+                            تعيين كفرع الاستلام المفضّل
+                        </button>
+                    </div>
+
+                    <div class="p-6 rounded-2xl border border-gold-dim hover:border-gold transition shadow-xl" style="background-color: var(--color-card);">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-amiri text-gold">فرع دبي مول</h3>
+                                <p class="text-xs opacity-70">جناح المجوهرات الفاخرة، الطابق الأرضي</p>
+                            </div>
+                            <i class="fa-solid fa-building text-gold text-2xl"></i>
+                        </div>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-clock text-gold ml-1"></i> يعمل يومياً من 10:00 صباحاً - 12:00 منتصف الليل</p>
+                        <p class="text-xs opacity-80 mb-4"><i class="fa-solid fa-phone text-gold ml-1"></i> 97143322110+ </p>
+                        <button onclick="selectBranch('فرع دبي مول')" class="btn-secondary text-xs w-full py-2.5" data-key="select_branch">
+                            تعيين كفرع الاستلام المفضّل
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Royal VIP Support Section -->
+        <section id="contactSection" class="py-20 border-b border-gold-dim">
+            <div class="container mx-auto px-6">
+                <div class="section-header text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-amiri text-gold mb-4" data-key="contact_title">التواصل والحجز الملكي الخاص</h2>
+                    <div class="golden-line mx-auto"></div>
+                    <p class="opacity-70 text-sm mt-4" data-key="contact_subtitle">فريق مستشاري المجوهرات جاهز لإجابتك أو تنظيم زيارة خاصة لكِ في المعرض</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 p-4 border border-gold-dim rounded-2xl" style="background-color: var(--color-card);">
+                            <div class="w-12 h-12 rounded-full border border-gold flex-center text-gold text-xl">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gold">خدمة العملاء VIP المباشرة</h4>
+                                <p class="text-xs opacity-70">920008899 / 966500000000+</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 border border-gold-dim rounded-2xl" style="background-color: var(--color-card);">
+                            <div class="w-12 h-12 rounded-full border border-gold flex-center text-gold text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gold">المحادثات المباشرة عبر واتساب</h4>
+                                <a href="https://wa.me/966500000000" target="_blank" class="text-xs text-gold hover:underline">انقر للدردشة المباشرة مع مستشار المجوهرات</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 border border-gold-dim rounded-2xl" style="background-color: var(--color-card);">
+                            <div class="w-12 h-12 rounded-full border border-gold flex-center text-gold text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gold">البريد الإلكتروني الملكي</h4>
+                                <p class="text-xs opacity-70">vip@jawhara-royal.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form onsubmit="submitContactForm(event)" class="p-8 rounded-2xl border border-gold-dim space-y-4" style="background-color: var(--color-card);">
+                        <h3 class="text-2xl font-amiri text-gold mb-2">طلب استشارة أو حجز موعد خاص</h3>
+                        <input type="text" placeholder="الاسم الكامل" required class="input-luxury text-xs">
+                        <input type="tel" placeholder="رقم الهاتف / الواتساب" required class="input-luxury text-xs">
+                        <select class="input-luxury text-xs">
+                            <option>نوع الخدمة المطلوبة</option>
+                            <option>طلب تصميم خاص لمجوهرات</option>
+                            <option>حجز صالة العرض الملكية الخاصة</option>
+                            <option>استفسار عن الشراء والتحويل</option>
+                        </select>
+                        <textarea rows="3" placeholder="ملاحظاتك أو تفاصيل الطلب..." class="input-luxury text-xs"></textarea>
+                        <button type="submit" class="btn-primary w-full text-xs py-3">إرسال الطلب لمستشار المجوهرات</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Augmented Reality (AR) Try-On Section -->
+        <section id="arExperience" class="py-24 relative overflow-hidden" style="background-color: var(--color-card);">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-gold text-xs font-bold tracking-widest uppercase mb-2 block" data-key="ar_tag">تقنية تجربة حصرية</span>
+                        <h2 class="text-3xl md:text-5xl font-amiri mb-6 leading-tight">
+                            <span data-key="ar_title_1">شاهدي المجوهرات على يدكِ</span> <br><span class="text-gold" data-key="ar_title_2">باستخدام الكاميرا (AR)</span>
+                        </h2>
+                        <p class="opacity-80 text-sm leading-relaxed mb-8" data-key="ar_desc">
+                            بفضل خوارزميات التتبع المتقدمة للواقع المعزز، يمكنك تجربة الخواتم والأساور حياً ومباشرة والتأكد من ملاءمة المظهر للون البشرة والقياس.
+                        </p>
+                        <button id="startARBtn" class="btn-primary">
+                            <i class="fa-solid fa-camera ml-2"></i> <span data-key="ar_btn">تشغيل الكاميرا والتجربة فوراً</span>
+                        </button>
+                    </div>
+
+                    <div class="ar-preview-box border-2 border-gold-dim rounded-2xl p-6 text-center relative flex-center flex-col min-h-[400px]" style="background-color: var(--color-black);">
+                        <div id="arPlaceholder" class="space-y-4">
+                            <i class="fa-solid fa-vr-cardboard text-6xl text-gold animate-bounce"></i>
+                            <h4 class="text-xl font-amiri text-gold" data-key="ar_box_title">الكاميرا جاهزة للبث</h4>
+                            <p class="text-xs opacity-70 max-w-xs mx-auto" data-key="ar_box_sub">انقري للبدء في معايشة بريق الخواتم والأساور الملكية</p>
+                        </div>
+                        <video id="arVideoFeed" class="hidden absolute inset-0 w-full h-full object-cover rounded-2xl" autoplay playsinline></video>
+                        <div id="arOverlayControls" class="hidden absolute bottom-4 left-4 right-4 flex justify-between items-center bg-black/80 backdrop-blur p-4 rounded-xl border border-gold">
+                            <span class="text-xs text-gold">جاري تجربة: خاتم السوليتير الملكي</span>
+                            <button id="stopARBtn" class="text-xs bg-red-600 text-white px-3 py-1 rounded">إغلاق</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Direct Checkout & Payment Popup Modal -->
+    <div id="checkoutModal" class="fixed-full bg-black/85 backdrop-blur z-max hidden flex-center p-4">
+        <div class="border-2 border-gold rounded-2xl p-6 w-full max-w-lg relative" style="background-color: var(--color-card);">
+            <button onclick="closeCheckout()" class="absolute top-4 left-4 text-2xl text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-amiri text-gold mb-1 text-center">إتمام الدفع الآمن</h3>
+            <p class="text-xs opacity-70 text-center mb-6">منصة تشفير الدفع الملكية المباشرة</p>
+
+            <form onsubmit="processPayment(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gold mb-1">طريقة الدفع المفضلة:</label>
+                    <select id="paymentMethodSelect" onchange="togglePaymentInputs()" class="input-luxury text-xs">
+                        <option value="card">بطاقات بنكية (Visa / MasterCard / Mada)</option>
+                        <option value="apple">Apple Pay</option>
+                        <option value="transfer">تحويل بنكي مباشر (مصرف الراجحي)</option>
+                    </select>
+                </div>
+
+                <!-- Credit Card Inputs -->
+                <div id="cardInputs" class="space-y-3">
+                    <input type="text" placeholder="اسم حامل البطاقة" required class="input-luxury text-xs">
+                    <input type="text" placeholder="رقم البطاقة (16 رقم)" maxlength="16" required class="input-luxury text-xs font-mono">
+                    <div class="grid grid-cols-2 gap-3">
+                        <input type="text" placeholder="MM/YY" maxlength="5" required class="input-luxury text-xs font-mono">
+                        <input type="text" placeholder="CVV" maxlength="4" required class="input-luxury text-xs font-mono">
+                    </div>
+                </div>
+
+                <!-- Bank Transfer Reference Input -->
+                <div id="transferInputs" class="hidden space-y-3">
+                    <p class="text-[11px] text-gold border border-gold-dim p-2 rounded">يرجى التحويل للآيبان المعتمد بالمنصة وإدخال الرقم المرجعي للإيصال بالأسفل.</p>
+                    <input type="text" placeholder="رقم المرجع للتحويل / رقم الإيصال" class="input-luxury text-xs font-mono">
+                </div>
+
+                <div class="border-t border-gold-dim pt-4 mt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold">المبلغ الإجمالي للشراء:</span>
+                        <span id="checkoutAmount" class="text-gold font-amiri font-bold text-xl">0 SAR</span>
+                    </div>
+                    <button type="submit" class="btn-primary w-full text-xs py-3.5">تأكيد ودفع الطلب فوراً</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quick Product View Modal -->
+    <div id="quickViewModal" class="fixed-full bg-black/80 backdrop-blur z-max hidden flex-center p-4">
+        <div class="border-2 border-gold rounded-2xl p-6 w-full max-w-2xl relative" style="background-color: var(--color-card);">
+            <button onclick="closeQuickView()" class="absolute top-4 left-4 text-2xl text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="quickViewContent" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <!-- Content Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Drawer Modal -->
+    <div id="cartModal" class="fixed-full bg-black/80 backdrop-blur z-max hidden flex justify-end">
+        <div class="cart-drawer w-full max-w-md border-r border-gold h-full p-6 flex flex-col justify-between overflow-hidden" style="background-color: var(--color-card);">
+            <div>
+                <div class="flex justify-between items-center border-b border-gold-dim pb-4 mb-6">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-gold text-xl"></i>
+                        <h3 class="text-xl font-amiri text-gold" data-key="cart_title">حقيبة التسوق</h3>
+                    </div>
+                    <button id="cartCloseBtn" class="text-2xl text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="cartItemsContainer" class="space-y-4 max-h-[55vh] overflow-y-auto pr-2">
+                    <!-- Dynamic Cart Items -->
+                </div>
+            </div>
+
+            <div class="border-t border-gold-dim pt-6">
+                <div class="flex justify-between items-center text-sm mb-2">
+                    <span class="opacity-70" data-key="cart_branch">الفرع المحدد:</span>
+                    <span id="cartBranchLabel" class="text-gold font-bold">فرع الرياض الرئيسي</span>
+                </div>
+                <div class="flex justify-between items-center text-sm mb-4">
+                    <span class="opacity-70" data-key="cart_shipping">التأمين والتوصيل المصفّح:</span>
+                    <span class="text-gold font-bold" data-key="cart_free">مجاني بالكامل</span>
+                </div>
+                <div class="flex justify-between items-center text-lg font-bold border-t border-gold-dim pt-3 mb-6">
+                    <span class="text-gold" data-key="cart_total">الإجمالي النهائي:</span>
+                    <span id="cartTotal" class="text-gold font-amiri text-2xl">0 SAR</span>
+                </div>
+                <button onclick="openCheckoutModal()" class="btn-primary w-full text-center py-4">
+                    <i class="fa-solid fa-credit-card ml-2"></i> <span data-key="cart_checkout">متابعة وإتمام الدفع بالبطاقة</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold-dim py-8 text-center text-xs opacity-80" style="background-color: var(--color-black);">
+        <p data-key="footer_rights">جميع الحقوق محفوظة © 2026 منصة الجوهرة للمجوهرات والذهب الخالص</p>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const translations = {
+            ar: {
+                announcement: "تشكيلة الفخامة الملكية 2026 - جميع المعروضات مصنوعة من الذهب والماس الحقيقي ومعتمدة",
+                logoText: "الـجـوهـرة",
+                nav_home: "الرئيسية",
+                nav_categories: "المجموعات",
+                nav_gold: "أسعار الذهب اليوم",
+                nav_products: "المعروضات الفاخرة",
+                nav_payment: "الدفع والحسابات",
+                nav_branches: "الفروع والتوصيل",
+                nav_contact: "التواصل والحجز",
+                nav_ar: "تجربة AR",
+                mobile_menu_title: "القائمة الرئيسية",
+                hero_badge: "الفخامة المطلقة والضمان الملكي 2026",
+                hero_title_1: "صياغة تُخلّد الأوقات",
+                hero_title_2: "وبريقٌ يلامس الخيال",
+                hero_desc: "مرحباً بكم في دار الجوهرة. الوجهة الأولى لاقتناء أنقى قطع الألماس الحر وصياغات الذهب النادر مع خدمة التوصيل المصفّح والشراء بالبطاقات البنكية.",
+                hero_btn_shop: "تسوق المجموعة الملكية",
+                hero_btn_branches: "تحديد الفرع والتوصيل",
+                gold_live_title: "مؤشر أسعار الذهب المباشر:",
+                k24: "عيار 24:",
+                k21: "عيار 21:",
+                k18: "عيار 18:",
+                categories_title: "تشكيلات الجوهرة",
+                categories_subtitle: "اختاري التشكيلة التي تناسب مناسباتكِ الفاخرة",
+                cat_rings: "الخواتم والسوليتير",
+                cat_rings_sub: "أحجار ألماس ومجوهرات نادرة",
+                cat_necklaces: "القلائد والسلاسل",
+                cat_necklaces_sub: "تصاميم ذهبية ملكية",
+                cat_bracelets: "الأساور والمعاصم",
+                cat_bracelets_sub: "أساور مرصعة بالنادر",
+                cat_earrings: "الأقراط والمجموعات",
+                cat_earrings_sub: "أقراط لؤلؤ وألماس",
+                products_title: "المعرض الملكي الرئيسي",
+                products_subtitle: "تصفحي القطع الفاخرة المتاحة للشراء المباشر بالبطاقات البنكية والتحويل",
+                filter_all: "الكل",
+                filter_diamond: "الألماس الحر",
+                filter_gold21: "ذهب عيار 21",
+                filter_gold18: "ذهب عيار 18",
+                filter_sets: "الأطقم الكاملة",
+                payment_title: "طرق الدفع والحساب الملكي",
+                payment_subtitle: "نوفر أعلى معايير الأمان والتشفير المالي مع إمكانية التحويل المباشر والدفع أونلاين",
+                payment_methods_title: "وسائل الدفع الإلكتروني المعتمدة",
+                bank_transfer_title: "التحويل البنكي المباشر",
+                branches_title: "فروع دار الجوهرة وتحديد الموقع",
+                branches_subtitle: "حدد فرعك المفضّل للاستلام المباشر أو التوصيل بالسيارات المصفحة",
+                select_branch: "تعيين كفرع الاستلام المفضّل",
+                contact_title: "التواصل والحجز الملكي الخاص",
+                contact_subtitle: "فريق مستشاري المجوهرات جاهز لإجابتك أو تنظيم زيارة خاصة لكِ في المعرض",
+                ar_tag: "تقنية تجربة حصرية",
+                ar_title_1: "شاهدي المجوهرات على يدكِ",
+                ar_title_2: "باستخدام الكاميرا (AR)",
+                ar_desc: "بفضل خوارزميات التتبع المتقدمة للواقع المعزز، يمكنك تجربة الخواتم والأساور حياً ومباشرة والتأكد من ملاءمة المظهر للون البشرة والقياس.",
+                ar_btn: "تشغيل الكاميرا والتجربة فوراً",
+                ar_box_title: "الكاميرا جاهزة للبث",
+                ar_box_sub: "انقري للبدء في معايشة بريق الخواتم والأساور الملكية",
+                cart_title: "حقيبة التسوق",
+                cart_branch: "الفرع المحدد:",
+                cart_shipping: "التأمين والتوصيل المصفّح:",
+                cart_free: "مجاني بالكامل",
+                cart_total: "الإجمالي النهائي:",
+                cart_checkout: "متابعة وإتمام الدفع بالبطاقة",
+                add_to_cart: "إضافة للسلة",
+                footer_rights: "جميع الحقوق محفوظة © 2026 منصة الجوهرة للمجوهرات والذهب الخالص"
+            },
+            en: {
+                announcement: "Royal Luxury Collection 2026 - All items are certified pure gold and authentic diamonds",
+                logoText: "AL-JAWHARA",
+                nav_home: "Home",
+                nav_categories: "Collections",
+                nav_gold: "Gold Rates",
+                nav_products: "Showcase",
+                nav_payment: "Payment & Banking",
+                nav_branches: "Branches",
+                nav_contact: "Contact & VIP",
+                nav_ar: "AR Experience",
+                mobile_menu_title: "Main Menu",
+                hero_badge: "Ultimate Luxury & Royal Guarantee 2026",
+                hero_title_1: "Craftsmanship Beyond Time",
+                hero_title_2: "Brilliance Touching Imagination",
+                hero_desc: "Welcome to Al-Jawhara Royal House. The premiere destination for pure certified diamonds and rare gold craftsmanship.",
+                hero_btn_shop: "Shop Royal Collection",
+                hero_btn_branches: "Select Branch & Delivery",
+                gold_live_title: "Live Gold Market Rates:",
+                k24: "24K Gold:",
+                k21: "21K Gold:",
+                k18: "18K Gold:",
+                categories_title: "Jawhara Collections",
+                categories_subtitle: "Choose the collection that fits your luxurious occasions",
+                cat_rings: "Rings & Solitaires",
+                cat_rings_sub: "Rare Diamonds & Gems",
+                cat_necklaces: "Necklaces & Chains",
+                cat_necklaces_sub: "Royal Gold Designs",
+                cat_bracelets: "Bracelets & Bangles",
+                cat_bracelets_sub: "Jeweled Rare Bangles",
+                cat_earrings: "Earrings & Sets",
+                cat_earrings_sub: "Pearl & Diamond Earrings",
+                products_title: "Royal Main Showcase",
+                products_subtitle: "Browse certified fine pieces available for direct online payment",
+                filter_all: "All",
+                filter_diamond: "Pure Diamond",
+                filter_gold21: "21K Gold",
+                filter_gold18: "18K Gold",
+                filter_sets: "Royal Sets",
+                payment_title: "Payment Methods & Banking",
+                payment_subtitle: "Highest financial encryption and direct bank transfer available",
+                payment_methods_title: "Approved Payment Gateways",
+                bank_transfer_title: "Direct Bank Transfer",
+                branches_title: "Jawhara Stores & Locator",
+                branches_subtitle: "Choose your favorite branch for direct pickup or armored delivery",
+                select_branch: "Set as Preferred Branch",
+                contact_title: "Contact & VIP Booking",
+                contact_subtitle: "Our jewelry consultants are ready to answer your questions or schedule a private lounge visit",
+                ar_tag: "Exclusive Experience Tech",
+                ar_title_1: "Try Jewelry On Your Hand",
+                ar_title_2: "Live Camera Experience (AR)",
+                ar_desc: "Experience live augmented reality ring and bracelet try-ons with advanced tracking to match skin tone and precise sizing.",
+                ar_btn: "Launch Camera & Try Now",
+                ar_box_title: "Camera Feed Ready",
+                ar_box_sub: "Click to start experiencing royal rings and bracelets",
+                cart_title: "Shopping Bag",
+                cart_branch: "Selected Branch:",
+                cart_shipping: "Armored Shipping & Insurance:",
+                cart_free: "Completely Free",
+                cart_total: "Grand Total:",
+                cart_checkout: "Proceed to Secure Payment",
+                add_to_cart: "Add to Cart",
+                footer_rights: "All Rights Reserved © 2026 Al-Jawhara Royal Jewelry & Gold"
+            }
+        };
+
+        const productsData = [
+            { id: 1, category: "diamond", title_ar: "خاتم السوليتير الألماسي الملكي", title_en: "Royal Solitaire Diamond Ring", price: 8450, purity: "VVS1 Diamond", image: "https://images.pexels.com/photos/1457801/pexels-photo-1457801.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 2, category: "gold21", title_ar: "قلادة الزمرد والذهب الخالص", title_en: "Emerald & Pure Gold Necklace", price: 4200, purity: "21K Gold", image: "https://images.pexels.com/photos/2849743/pexels-photo-2849743.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 3, category: "diamond", title_ar: "سوار الألماس المرصع الفاخر", title_en: "Luxury Diamond Bracelet", price: 12900, purity: "18K Diamond", image: "https://images.pexels.com/photos/2735970/pexels-photo-2735970.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 4, category: "gold18", title_ar: "أقراط اللؤلؤ والذهب الأصفر", title_en: "Pearl & Gold Earrings", price: 3100, purity: "18K Gold", image: "https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 5, category: "sets", title_ar: "طقم العروس الألماسي الشامل", title_en: "Bridal Diamond Royal Set", price: 45000, purity: "VVS Pure Diamond", image: "https://images.pexels.com/photos/2697786/pexels-photo-2697786.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 6, category: "gold21", title_ar: "سوار الكارتييه الذهبي ثقيل", title_en: "Heavy Gold Bangles 21K", price: 9800, purity: "21K Gold", image: "https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 7, category: "diamond", title_ar: "ساعة الذهب المرصعة بالألماس", title_en: "Diamond Gold Luxury Watch", price: 32000, purity: "18K Gold & Diamond", image: "https://images.pexels.com/photos/1258598/pexels-photo-1258598.jpeg?auto=compress&cs=tinysrgb&w=800" },
+            { id: 8, category: "gold18", title_ar: "خاتم الياقوت الأحمر والذهب", title_en: "Ruby & Gold Gemstone Ring", price: 6100, purity: "18K Gold", image: "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=800" }
+        ];
+
+        let currentLang = 'ar';
+        let cart = [];
+        let selectedBranch = "فرع الرياض الرئيسي";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 800);
+
+            renderProducts('all');
+
+            // Language Toggle
+            const langBtn = document.getElementById('langToggleBtn');
+            langBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'ar' ? 'en' : 'ar';
+                document.documentElement.lang = currentLang;
+                document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+                document.getElementById('langLabel').innerText = currentLang === 'ar' ? 'EN' : 'عربي';
+
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (translations[currentLang][key]) {
+                        el.innerHTML = translations[currentLang][key];
+                    }
+                });
+
+                document.getElementById('logoText').innerText = translations[currentLang].logoText;
+                renderProducts();
+                updateCartUI();
+            });
+
+            // Theme Toggle
+            const themeBtn = document.getElementById('themeToggleBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            themeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
+                if (document.body.classList.contains('light-mode')) {
+                    themeIcon.className = 'fa-solid fa-sun text-yellow-500';
+                } else {
+                    themeIcon.className = 'fa-solid fa-moon text-gold';
+                }
+            });
+
+            // Mobile menu
+            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('hidden');
+                document.getElementById('mobileMenu').classList.add('flex');
+            });
+            document.getElementById('mobileMenuClose').addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderProducts(e.target.dataset.filter);
+                });
+            });
+
+            // Shopping Cart Modals
+            document.getElementById('cartOpenBtn').addEventListener('click', () => {
+                document.getElementById('cartModal').classList.remove('hidden');
+            });
+            document.getElementById('cartCloseBtn').addEventListener('click', () => {
+                document.getElementById('cartModal').classList.add('hidden');
+            });
+
+            // AR Camera Simulator
+            document.getElementById('startARBtn').addEventListener('click', async () => {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                    const video = document.getElementById('arVideoFeed');
+                    video.srcObject = stream;
+                    video.classList.remove('hidden');
+                    document.getElementById('arOverlayControls').classList.remove('hidden');
+                    document.getElementById('arPlaceholder').classList.add('hidden');
+                } catch (err) {
+                    alert(currentLang === 'ar' ? 'يرجى السماح بالوصول للكاميرا لتشغيل التجربة' : 'Please allow camera access for the AR experience');
+                }
+            });
+
+            document.getElementById('stopARBtn').addEventListener('click', () => {
+                const video = document.getElementById('arVideoFeed');
+                if (video.srcObject) {
+                    video.srcObject.getTracks().forEach(track => track.stop());
+                }
+                video.classList.add('hidden');
+                document.getElementById('arOverlayControls').classList.add('hidden');
+                document.getElementById('arPlaceholder').classList.remove('hidden');
+            });
+        });
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('productsGrid');
+            const items = filter === 'all' ? productsData : productsData.filter(p => p.category === filter);
+            
+            grid.innerHTML = items.map(p => `
+                <div class="product-card p-4 flex flex-col justify-between">
+                    <div class="h-64 rounded-xl overflow-hidden mb-4 relative cursor-pointer" onclick="openQuickView(${p.id})">
+                        <img src="${p.image}" class="w-full h-full object-cover">
+                        <span class="absolute top-2 right-2 bg-gold text-black text-[10px] font-bold px-2 py-0.5 rounded-full">${p.purity}</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">${currentLang === 'ar' ? p.title_ar : p.title_en}</h3>
+                        <p class="text-gold font-bold text-sm mb-4">${p.price.toLocaleString()} SAR</p>
+                        <button onclick="addToCart(${p.id})" class="btn-secondary text-xs w-full py-2">
+                            <i class="fa-solid fa-plus ml-1"></i> ${translations[currentLang].add_to_cart}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(id) {
+            const item = productsData.find(p => p.id === id);
+            cart.push(item);
+            updateCartUI();
+            document.getElementById('cartModal').classList.remove('hidden');
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.length;
+            const container = document.getElementById('cartItemsContainer');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-xs opacity-60 py-8">${currentLang === 'ar' ? 'سلة الشراء فارغة حالياً' : 'Your cart is empty'}</p>`;
+                document.getElementById('cartTotal').innerText = '0 SAR';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map((p, idx) => {
+                total += p.price;
+                return `
+                    <div class="flex items-center justify-between p-3 rounded-lg border border-gold-dim" style="background-color: var(--color-black);">
+                        <div class="flex items-center gap-3">
+                            <img src="${p.image}" class="w-12 h-12 object-cover rounded">
+                            <div>
+                                <h4 class="text-xs font-bold">${currentLang === 'ar' ? p.title_ar : p.title_en}</h4>
+                                <span class="text-gold text-xs">${p.price.toLocaleString()} SAR</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${idx})" class="text-red-500 text-xs"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('cartTotal').innerText = `${total.toLocaleString()} SAR`;
+            document.getElementById('cartBranchLabel').innerText = selectedBranch;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function selectBranch(branchName) {
+            selectedBranch = branchName;
+            document.getElementById('selectedBranchLabel').innerText = branchName;
+            alert(currentLang === 'ar' ? `تم تعيين ${branchName} كفرع مفضّل لطلبك` : `${branchName} set as your preferred branch`);
+            updateCartUI();
+        }
+
+        function openQuickView(id) {
+            const p = productsData.find(item => item.id === id);
+            const content = document.getElementById('quickViewContent');
+            content.innerHTML = `
+                <div class="h-64 rounded-xl overflow-hidden">
+                    <img src="${p.image}" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-gold text-xs font-bold block mb-1">${p.purity}</span>
+                    <h3 class="text-xl font-bold font-amiri mb-2">${currentLang === 'ar' ? p.title_ar : p.title_en}</h3>
+                    <p class="text-gold font-bold text-lg mb-4">${p.price.toLocaleString()} SAR</p>
+                    <p class="text-xs opacity-70 mb-6 leading-relaxed">${currentLang === 'ar' ? 'قطعة ممتازة نادرة مصنوعة ومصاغة بأعلى درجات الدقة مع ضمان وإمكانية التوصيل المصفّح.' : 'A rare certified piece handcrafted with gold and diamond accuracy with royal warranty.'}</p>
+                    <button onclick="addToCart(${p.id}); closeQuickView();" class="btn-primary text-xs w-full py-3">
+                        ${translations[currentLang].add_to_cart}
+                    </button>
+                </div>
+            `;
+            document.getElementById('quickViewModal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.add('hidden');
+        }
+
+        function copyIBAN() {
+            const iban = document.getElementById('ibanNum').innerText;
+            navigator.clipboard.writeText(iban);
+            alert(currentLang === 'ar' ? 'تم نسخ رقم IBAN بنجاح' : 'IBAN copied successfully');
+        }
+
+        /* Direct Payment & Checkout Controls */
+        function openCheckoutModal() {
+            if(cart.length === 0) {
+                alert(currentLang === 'ar' ? 'السلة فارغة! يرجى إضافة قطعة على الأقل للشراء' : 'Cart is empty!');
+                return;
+            }
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('checkoutAmount').innerText = `${total.toLocaleString()} SAR`;
+            document.getElementById('cartModal').classList.add('hidden');
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function togglePaymentInputs() {
+            const method = document.getElementById('paymentMethodSelect').value;
+            const cardInputs = document.getElementById('cardInputs');
+            const transferInputs = document.getElementById('transferInputs');
+
+            if (method === 'transfer') {
+                cardInputs.classList.add('hidden');
+                transferInputs.classList.remove('hidden');
+            } else {
+                cardInputs.classList.remove('hidden');
+                transferInputs.classList.add('hidden');
+            }
+        }
+
+        function processPayment(e) {
+            e.preventDefault();
+            alert(currentLang === 'ar' ? 'تم استلام وتأكيد عملية الدفع بنجاح! سيتم تجهيز طلبك للتوصيل المصفح' : 'Payment confirmed! Your order will be dispatched via armored delivery.');
+            cart = [];
+            updateCartUI();
+            closeCheckout();
+        }
+
+        function submitContactForm(e) {
+            e.preventDefault();
+            alert(currentLang === 'ar' ? 'تم إرسال طلب الحجز بنجاح! سيتواصل معك مستشار المجوهرات فوراً' : 'Booking request sent! Our consultant will contact you shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
